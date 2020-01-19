@@ -1,0 +1,10 @@
+{
+	"baseUrl": "http://localhost:4200",
+	"userName": "kiadr9372@gmail.com",
+	"password": "kianoush",
+	"minLenghtPassword": "kian",
+	"magUserName": "admin",
+	"magPassword": "123@456#Pass",
+	"loginUrl":"http://mag-cpl.astromap.ir/api/v1/Account/LoginAdmin",
+	"userInformation":"http://mag-cpl.astromap.ir/api/v1/UsersManager/UserInformation"
+}

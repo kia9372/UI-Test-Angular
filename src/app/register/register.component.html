@@ -1,0 +1,44 @@
+<form [formGroup]="registerFormGroup" style="border:1px solid #ccc">
+	<div class="container">
+		<h1>Sign Up</h1>
+		<p>Please fill in this form to create an account.</p>
+		<hr>
+
+		<label for="email"><b>Email</b></label>
+		<input formControlName="userName" id="email" type="text" placeholder="Enter Email" name="email">
+		<label id="error-userName" *ngIf="registerFormGroup.get('userName').errors?.required"></label>
+
+		<label for="psw"><b>Password</b></label>
+		<input formControlName="password" type="password" id="password" placeholder="Enter Password">
+		<div id="error-password" class="error" *ngIf="registerFormGroup.get('password').errors?.minlength">Min Lengh
+		</div>
+
+		<label for="psw-repeat"><b>Repeat Password</b></label>
+		<input formControlName="confirmPassword" type="password" id="conf-password" placeholder="Repeat Password">
+		<div id="error-confirmPassword" class="error"
+			*ngIf="registerFormGroup.get('confirmPassword').errors?.minlength">Min Lengh</div>
+
+		<label for="psw-repeat"><b>Gender </b></label>
+		<select name="gender" id="gender">
+			<option>Male</option>
+			<option>Fmale</option>
+			<option>Other</option>
+		</select>
+
+		<br>
+		<br>
+
+		<label>
+			<input type="checkbox" id="rememberMe" checked="checked" name="remember" style="margin-bottom:15px">
+			Remember me
+		</label>
+
+		<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+		<div class="clearfix">
+			<button type="button" class="cancelbtn">Cancel</button>
+			<button type="submit" id="register-button" [disabled]="!registerFormGroup.valid" [routerLink]="['/home']"
+				class="signupbtn">Sign Up</button>
+		</div>
+	</div>
+</form>
